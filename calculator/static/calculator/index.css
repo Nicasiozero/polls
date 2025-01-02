@@ -1,0 +1,38 @@
+.inputBox{
+    display: flex;
+    /* border: 1px solid red; */
+    gap: 20px;
+}
+.operator, .result{
+    display: flex;
+    gap: 20px;
+    margin-left: 30px;
+}
+
+.submit{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+
+.operator button {
+    width: 60px;
+    height: 40px;
+    margin: 5px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.operator button:hover {
+    background-color: #0056b3;
+}
+
+.result h2 {
+    color: #28a745;
+    text-align: center;
+    margin-top: 20px;
+}
