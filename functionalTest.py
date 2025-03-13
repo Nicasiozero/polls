@@ -13,8 +13,12 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):  
         self.browser.quit()
 
-    def test_can_start_a_polls(self):          
+    def test_can_start_a_polls_public(self):          
         self.browser.get("http://localhost:8000")  
+        self.assertIn("polls", self.browser.title)
+
+    def test_can_start_a_private(self):          
+        self.browser.get("http://localhost:8000/private")  
         self.assertIn("polls", self.browser.title)
 
 if __name__ == "__main__":  
