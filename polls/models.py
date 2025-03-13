@@ -16,7 +16,7 @@ class Question(models.Model):
         
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
-    # isPrivate = models.BooleanField("private or public")
+    is_private = models.BooleanField("private or public", default=False)
     
 class Choice(models.Model):
     def __str__(self):
