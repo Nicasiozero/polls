@@ -33,14 +33,12 @@ class ResultsView(generic.DetailView):
 
 
 def private_view(request):
-    latest_question_list = Question.objects.filter(is_private=True).order_by("-pub_date")
+    latest_question_list = Question.objects.filter(is_private=True).order_by("-pub_date")[:3]
     context = {"latest_question_list": latest_question_list}
     return render(request, "polls/index.html", context)
 
-
-
 def public_view(request):
-    latest_question_list = Question.objects.filter(is_private=False).order_by("-pub_date")[:5]
+    latest_question_list = Question.objects.filter(is_private=False).order_by("-pub_date")
     context = {"latest_question_list": latest_question_list}
     return render(request, "polls/index.html", context)
 
