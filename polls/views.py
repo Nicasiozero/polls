@@ -33,7 +33,7 @@ class ResultsView(generic.DetailView):
 
 
 def private_view(request):
-    latest_question_list = Question.objects.filter(is_private=True).order_by("-pub_date")[:3]
+    latest_question_list = Question.objects.filter(is_private=True).order_by("-pub_date")
     context = {"latest_question_list": latest_question_list}
     return render(request, "polls/index.html", context)
 
@@ -78,3 +78,9 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+    
+
+
+
+
+
